@@ -31,8 +31,22 @@
         margin-top: 50px; /* Add some space at the top */
         margin-bottom: 40px; /* Add some space at the top */
         text-shadow: 3px 3px #0f4d61; /* Add a text shadow */
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
+      h1::before {
+        content: "\1f30a"; /* Add an emoji before the h1 text */
+        font-size: 30px;
+        margin-right: 20px;
+      }
+
+      h1::after {
+        content: "\1f4a8"; /* Add an emoji after the h1 text */
+        font-size: 30px;
+        margin-left: 20px;
+      }
       h2 {
         font-size: 30px; /* Increase the font size */
         color: #a2d6e7; /* Change the color */
