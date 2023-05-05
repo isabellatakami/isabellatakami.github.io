@@ -1,0 +1,258 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #6ba3bc;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 60px;
+        color: #a2d6e7;
+        margin-top: 0px; /* Space at the top */
+        margin-bottom: 60px; /* Space at the top */
+        text-shadow: 3px 3px #0f4d61; /* Text shadow */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 60px;
+        color: #a2d6e7;
+        margin-top: 0px; /* Space at the top */
+        margin-bottom: 60px; /* Space at the top */
+        text-shadow: 3px 3px #0f4d61; /* Text shadow */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      button {
+        background-color: #6ba3bc;
+        border: 2px solid #6ba3bc;
+        cursor: pointer;
+        font-size: 30px;
+        color: #b8dce8;
+        text-align: center;
+        font-weight: bold; /* Made the text bold */
+        margin-top: 20px;
+        margin-bottom: 0px;
+        text-shadow: 2px 2px #0f4d61; /* Text shadow */
+        font-family: "Times New Roman", Times, serif;
+      }
+    </style>
+
+    <style type="text/css">
+      canvas {
+        margin-top: 100px; /* Space at the top */
+        margin-bottom: 40px; /* Space at the top */
+      }
+    </style>
+
+    <style type="text/css">
+      #infoBox {
+        display: none;
+        background-color: #a2d9ea;
+        border: 1px solid #add2de;
+        color: #367787;
+        font-size: 18px;
+        border-radius: 20px; /* Rounded corners */
+        font-family: Arial, sans-serif; /* Set the font to Arial */
+        padding: 30px;
+        position: absolute;
+        text-align: left;
+        font-weight: bold; /* Made the text bold */
+        top: 30%;
+        right: 4%;
+      }
+
+      #button {
+        background-color: #a2d9ea; /* Color */
+        border: 2px solid #add2de;
+        border-radius: 20px; /* Rounded corners */
+        color: #367787;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 0px 5px;
+        cursor: pointer;
+        letter-spacing: 2px; /* Space between the letters */
+        font-weight: bold; /* Made the text bold */
+        font-size: 20px;
+        font-family: Arial, sans-serif; /* Set the font to Arial */
+        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
+        margin-top: 60px;
+      }
+
+      #buttoni {
+        background-color: #a2d9ea; /* Color */
+        border: 2px solid #add2de;
+        border-radius: 30px; /* Rounded corners */
+        color: #367787;
+        padding: 10px 18px;
+        text-align: justify;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 50px;
+        margin: 0px 5px;
+        cursor: pointer;
+        letter-spacing: 2px; /* Space between the letters */
+        font-weight: bold; /* Made the text bold */
+        font-size: 20px;
+        font-family: Arial, sans-serif; /* Set the font to Arial */
+        text-shadow: 0px 0px 1px #367787; /* Border around the text */
+        margin-top: 60px;
+      }
+
+      #square {
+        width: 400px;
+        height: 400px;
+        border: 2px solid #6ba3bc;
+        position: relative;
+      }
+
+      #realSquare {
+        width: 350px;
+        height: 350px;
+        border: 5px solid #b8dce8;
+        position: relative;
+        margin-top: 25;
+        border-radius: 25px; /* Rounded corners */
+      }
+
+      #text {
+        color: #0a6e87;
+        text-align: center;
+        display: inline-block;
+        font-size: 25px;
+        letter-spacing: 2px; /* Space between the letters */
+        font-weight: bold; /* Made the text bold */
+        font-family: Arial, sans-serif; /* Set the font to Arial */
+        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
+        margin-top: 165;
+        margin-bottom: 159px;
+      }
+
+      #ball {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #b8dce8;
+        position: absolute;
+        top: 355px;
+        left: 0px;
+      }
+      #closeButton {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <button onclick="location.href='index.html'">breatheINDAcalm</button>
+      <h1>breathing exercises</h1>
+      <div id="square">
+        <div id="ball"></div>
+        <div id="realSquare">
+          <div id="text"></div>
+        </div>
+      </div>
+      <button id="button">click here to start</button>
+      <button id="buttoni">i</button>
+      <div id="infoBox">
+        This is breathing exercise where you breathe <br />
+        in a square. <br />
+        The breathing exercise involves 5 second <br />
+        intervals of inhaling, exhaling and holding <br />
+        your breath.
+        <br />
+        <br />
+        To go back to the home page with the menu, <br />
+        simply click on the "breatheINDAcalm"-button <br />
+        at the top of the page.
+        <span id="closeButton">&times;</span>
+      </div>
+
+      <script type="text/javascript">
+        var square = document.getElementById("square");
+        var realSquare = document.getElementById("realSquare");
+        var text = document.getElementById("text");
+        var ball = document.getElementById("ball");
+        const button = document.getElementById("button");
+        const buttoni = document.getElementById("buttoni");
+        const infoBox = document.getElementById("infoBox");
+        const closeButton = document.getElementById("closeButton");
+        var squareWidth = square.offsetWidth - ball.offsetWidth;
+        var squareHeight = square.offsetHeight - ball.offsetHeight;
+
+        let x = 0;
+        let y = squareHeight;
+        let directionX = 1;
+        let directionY = 1;
+        let speed = 1;
+
+        function moveBall() {
+          if (x >= squareWidth && y < squareHeight) {
+            y += speed;
+            text.textContent = "exhale";
+            text.style.color = "#e2f2f7";
+          } else if (y >= squareHeight && x > 0) {
+            x -= speed;
+            text.textContent = "hold";
+            text.style.color = "#0a6e87";
+          } else if (x <= 0 && y > 0) {
+            y -= speed;
+            text.textContent = "inhale";
+            text.style.color = "#e2f2f7";
+          } else {
+            x += speed;
+            text.textContent = "hold";
+            text.style.color = "#0a6e87";
+          }
+          ball.style.top = y + "px";
+          ball.style.left = x + "px";
+        }
+
+        button.addEventListener("click", hello);
+        var number = 0;
+
+        function hello() {
+          if (number == 0) {
+            setInterval(moveBall, 14);
+            number++;
+          }
+        }
+
+        buttoni.addEventListener("click", openOrClose);
+
+        var peter = 1;
+        function openOrClose() {
+          if (peter % 2 != 0) {
+            popUp();
+          } else {
+            infoBox.style.display = "none";
+          }
+          peter++;
+        }
+
+        function popDown() {}
+
+        function popUp() {
+          infoBox.style.display = "block";
+        }
+        closeButton.addEventListener("click", function () {
+          peter++;
+          infoBox.style.display = "none";
+        });
+      </script>
+    </center>
+  </body>
+</html>
