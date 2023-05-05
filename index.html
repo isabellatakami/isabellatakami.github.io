@@ -5,32 +5,51 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <div style="text-align:center;">
-    <h1>
-      <font color="darkgreen" size=5> breatheINDAcalm</font>
-    </h1>
-  </div>
   <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+  function changeVideo(videoID) {
+    var videoPlayer = document.getElementById("current-video");
+    var iframe = videoPlayer.querySelector("iframe");
+
+    iframe.src = `https://www.youtube.com/embed/${videoID}`
+    hideStartText();
+  }
+
+  function hideStartText() {
+    var text = document.getElementById("start-text")
+
+    text.style.display = "none";
+  }
+
+
+</script>
+
 <body>
 
+  <div>
+    <h1>breatheINDAcalm</h1>
+  </div>
+
+  <div>
+    <h4 id="start-text">please select a video to start meditating</h4>
+  </div>
+
+
+  
   <div class="video-player-container">
     <div class="video-gallery">
-      <div class="current-video">
+      <div class="current-video" id="current-video">
         <iframe 
         width="560" 
         height="315" 
-        src="https://www.youtube.com/embed/edasj2elg_I" 
-        title="YouTube video player" 
+        src="" 
+        title="" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         allowfullscreen>
-        </iframe>
-  
-        <h3 class="video-title">
-        Meowwwww
-        </h3>
+        </iframe>        
       </div>
     </div>
   </div>
@@ -38,20 +57,65 @@
 
   <div class="gallery-container">
     <div class="all-video-gallery">
+
       <div class="video">
-        <img class="thumbnail" src="thumbnail/pic-1.jpg" alt="">
+        <img
+        class="thumbnail" 
+        src="thumbnail/1.jpg" 
+        data-title="10-Minute Meditation For Anxiety"
+        onclick="changeVideo('O-6f5wQXSu8')"
+        alt="">
       </div>
 
       <div class="video">
-        <img class="thumbnail" src="thumbnail/pic-2.jpg" alt="">
+        <img
+        class="thumbnail" 
+        src="thumbnail/2.jpg" 
+        data-title="10 Minute Meditation Letting Go of Negative Thinking"
+        onclick="changeVideo('eKf_G0ZSmBI')"
+        alt="">
       </div>
 
       <div class="video">
-        <img class="thumbnail" src="thumbnail/pic-3.jpg" alt="">
+        <img
+        class="thumbnail" 
+        src="thumbnail/3.jpg" 
+        data-title="Avslappnande Musik för Sömn, Meditation & Avspänning"
+        onclick="changeVideo('rvaqPPjtxng')"
+        alt="">
+      </div>
+
+      <div class="video">
+        <img
+        class="thumbnail" 
+        src="thumbnail/4.jpg" 
+        data-title="Avslappnande sömnmusik • Musik för djupsömn, för att somna och som meditationsmusik #44"
+        onclick="changeVideo('1ZYbU82GVz4')"
+        alt="">
+      </div>
+
+      <div class="video">
+        <img
+        class="thumbnail" 
+        src="thumbnail/5.jpg" 
+        data-title="GUIDED SLEEP MEDITATION TALKDOWN - Insomnia - Relaxation"
+        onclick="changeVideo('8TDcGYmEgyM')"
+        alt="">
+      </div>
+
+      <div class="video">
+        <img
+        class="thumbnail" 
+        src="thumbnail/6.jpg" 
+        data-title="Guided Sleep Meditation Let Go of Anxiety & Calm Your Mind ~ Rainy Day Deep Sleep"
+        onclick="changeVideo('Re6BrOfJSHk')"
+        alt="">
       </div>
 
     </div>
   </div>
+
+  <script>src="backend.js"</script>
 
 
 

@@ -5,18 +5,73 @@ body {
 .video-player-container {
     display: flex;
     justify-content: center;
-    width: 900px;
-    background-color: black;
+    align-items: center;
+    width: 700px;
+    height: 420px;
+    background-color: #7CB9E8;
     margin: 0 auto;
 }
 
-.video-gallery .current-video iframe{
-    margin-top: 50px;
-    scale: 120%;
+.gallery-container {
+    background-color: lightblue;
+
+    margin: 0 auto;
+    margin-top: 30px;
+
+    width: 900px;
+
+    position: relative;
+    display: flex;
 }
 
-.gallery-container {
+.gallery-container .all-video-gallery {
     display: flex;
     overflow-x: auto;
+    gap: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
+.gallery-container .all-video-gallery .thumbnail {
+    cursor: pointer;
+}
+
+#start-text {
+    position: absolute;
+    z-index: 1;
+    top: 41vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+}  
+
+img {
+    width: 200px;
+}
+
+
+h1 {
+    text-align: center; 
+    font-size: 80px; 
+    color: #a2d6e7; 
+    margin-top: 50px; /* Space at the top */
+    margin-bottom: 40px; /* Space at the top */
+    text-shadow: 3px 3px #0f4d61; /* Text shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1::before {
+    content: "\1f30a"; /* Emoji before the h1 text */
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+h1::after {
+    content: "\1f4a8"; /* Emoji after the h1 text */
+    font-size: 30px;
+    margin-left: 20px;
 }
