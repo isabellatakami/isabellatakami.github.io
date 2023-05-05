@@ -5,7 +5,81 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #6ba3bc;
+    }
+
+    .video-player-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 700px;
+      height: 420px;
+      background-color: #7CB9E8;
+      margin: 0 auto;
+    }
+
+    .gallery-container {
+      background-color: lightblue;
+      margin: 0 auto;
+      margin-top: 30px;
+      width: 900px;
+      position: relative;
+      display: flex;
+    }
+
+    .gallery-container .all-video-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    .gallery-container .all-video-gallery .thumbnail {
+      cursor: pointer;
+    }
+
+    #start-text {
+      position: absolute;
+      z-index: 1;
+      top: 41vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: aliceblue;
+    }
+
+    img {
+      width: 200px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 80px;
+      color: #a2d6e7;
+      margin-top: 50px; /* Space at the top */
+      margin-bottom: 40px; /* Space at the top */
+      text-shadow: 3px 3px #0f4d61; /* Text shadow */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1::before {
+      content: "\1f30a"; /* Emoji before the h1 text */
+      font-size: 30px;
+      margin-right: 20px;
+    }
+
+    h1::after {
+      content: "\1f4a8"; /* Emoji after the h1 text */
+      font-size: 30px;
+      margin-left: 20px;
+    }
+  </style>
 </head>
 
 <script>
@@ -27,7 +101,6 @@
 </script>
 
 <body>
-
   <div>
     <h1>breatheINDAcalm</h1>
   </div>
@@ -35,8 +108,6 @@
   <div>
     <h4 id="start-text">please select a video to start meditating</h4>
   </div>
-
-
   
   <div class="video-player-container">
     <div class="video-gallery">
@@ -117,55 +188,4 @@
 
   <script>src="backend.js"</script>
 
-
-
-
-
-
-
-
-
-<!-- 
-
-  <div class="video-container">
-
-    <div class="video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/OEeqZ8v_6N0" title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-    </div>
-
-  </div>
-
-  <div class="gallery-container">
-
-    <div class="all-videos">
-      <div id="video1" class="video1">
-        <img 
-        class = thumbnail
-        data-id = ZToicYcHIOU
-        data-title = "Daily Calm | 10 Minute Mindfulness Meditation | Be Present"
-        src = "thumbnail/pic-1.jpg" 
-        alt = "">
-      </div>
-
-      <div id="video2" class="video2">
-        <img 
-        class = thumbnail
-        dataId = edasj2elg_I
-        title = "MEDITATING with Ariana Grande"
-        src = "thumbnail/pic-2.jpg" 
-        alt = "">
-      </div>
-
-    </div>
-
-  </div>
-
-  <script>src=backend.js</script>
-
-</body>
-
-</html>
-<!DOCTYPE html> -->
+  </html>
