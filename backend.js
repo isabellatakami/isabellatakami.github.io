@@ -1,4 +1,8 @@
-const APIkey = AIzaSyB_2aO45m1jxV_sY36CfIMoCYiKoxJ_seg
+let vid = document.querySelector("#video1")
 
-const searchTerm = "Wekimeki"
 
+vid.addEventListener("click", () => {
+    
+    
+
+});
