@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body {
+        background-color: #6ba3bc;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 80px;
+            color: #a2d6e7;
+            margin-top: 50px; /* Space at the top */
+            margin-bottom: 40px; /* Space at the top */
+            text-shadow: 3px 3px #0f4d61; /* Text shadow */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1::before {
+            content: "\1f30a"; /* Emoji before the h1 text */
+            font-size: 30px;
+            margin-right: 20px;
+        }
+
+        h1::after {
+            content: "\1f4a8"; /* Emoji after the h1 text */
+            font-size: 30px;
+            margin-left: 20px;
+        }
+
+        .container {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .playbutton-grid-row-1 {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 100px;
+        }
+
+        .playbutton-grid-row-2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 100px;
+            margin-top: -80px;
+        }
+
+        .playbutton {
+            padding: 200px;
+            width: 100px;
+            padding: 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .playbutton-container {
+            position: relative;
+        }
+
+        .playbutton-title {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+            font-size: 18px; 
+            font-family: Arial, sans-serif; /* Set the font to Arial */
+            text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
+            text-shadow: 3px 3px #0f4d61; /* Text shadow */
+
+        }
+
+        .audio-player-container {
+            height: 10px;
+        }
+
+        .audio-player {
+            height: 10px;
+        }
+
+    </style>
+</head>
+
+<script>
+    function playSound(videoID) {
+        var videoPlayer = document.getElementById("audio-player");
+        var iframe = videoPlayer.querySelector("iframe");
+
+        iframe.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
+    }
+</script>
+
+<body>
+    <div>
+        <h1>breatheINDAcalm</h1>
+    </div>
+
+    <div class="audio-player-container">
+        <div class="audio-player">
+            <iframe 
+            width="560" 
+            height="315" 
+            src="" 
+            title="" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+            </iframe>       
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="playbutton-grid-row-1">
+            <div class="playbutton-container">
+                <img class="playbutton" src="play-icon/playbutton.png" data-title="Rain" onclick="playSound('SnUBb-FAlCY')" alt="">
+                <p class="playbutton-title">Rain</p>
+            </div>
+            <div class="playbutton-container">
+                <img class="playbutton" src="play-icon/playbutton.png" data-title="Thunder" onclick="playSound()" alt="">
+                <p class="playbutton-title">Thunder</p>
+            </div>
+            <div class="playbutton-container">
+                <img class="playbutton" src="play-icon/playbutton.png" data-title="Wind" onclick="playSound()" alt="">
+                <p class="playbutton-title">Wind</p>
+            </div>
+        </div>
+        <div class="playbutton-grid-row-2">
+            <div class="playbutton-container">
+                <img class="playbutton" src="play-icon/playbutton.png" data-title="Ocean" onclick="playSound()" alt="">
+                <p class="playbutton-title">Ocean</p>
+            </div>
+            <div class="playbutton-container">
+                <img class="playbutton" src="play-icon/playbutton.png" data-title="Forest" onclick="playSound()" alt="">
+                <p class="playbutton-title">Forest</p>
+            </div>
+            <div class="playbutton-container">
+                <img class="playbutton" src="play-icon/playbutton.png" data-title="Fire" onclick="playSound()" alt="">
+                <p class="playbutton-title">Fire</p>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>
