@@ -1,186 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        
-        body {
+      body {
         background-color: #6ba3bc;
-        }
+      }
+      h1 {
+        text-align: center;
+        font-size: 60px;
+        color: #a2d6e7;
+        margin-top: 0px; /* Space at the top */
+        margin-bottom: 40px; /* Space at the top */
+        text-shadow: 3px 3px #0f4d61; /* Text shadow */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        h1 {
-            text-align: center;
-            font-size: 80px;
-            color: #a2d6e7;
-            margin-top: 50px; /* Space at the top */
-            margin-bottom: 40px; /* Space at the top */
-            text-shadow: 3px 3px #0f4d61; /* Text shadow */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      h2 {
+        text-align: center;
+        font-size: 23px;
+        color: #043c4e;
+        margin-top: 0px; /* Space at the top */
+        margin-bottom: 0px; /* Space at the top */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        h1::before {
-            content: "\1f30a"; /* Emoji before the h1 text */
-            font-size: 30px;
-            margin-right: 20px;
-        }
+      button {
+        background-color: #6ba3bc;
+        border: 2px solid #6ba3bc;
+        cursor: pointer;
+        font-size: 30px;
+        color: #b8dce8;
+        text-align: center;
+        font-weight: bold; /* Made the text bold */
+        margin: 0 auto; /* Center the button horizontally */
+        display: block; /* Make the button a block element */
+        margin-top: 20px;
+        margin-bottom: 0px;
+        text-shadow: 2px 2px #0f4d61; /* Text shadow */
+        font-family: "Times New Roman", Times, serif;
+      }
 
-        h1::after {
-            content: "\1f4a8"; /* Emoji after the h1 text */
-            font-size: 30px;
-            margin-left: 20px;
-        }
+      .container {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-        .container {
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+      .playbutton-grid-row-1 {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 100px;
+      }
 
-        .playbutton-grid-row-1 {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 100px;
-        }
+      .playbutton-grid-row-2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 100px;
+        margin-top: -80px;
+      }
 
-        .playbutton-grid-row-2 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 100px;
-            margin-top: -80px;
-        }
+      .playbutton {
+        padding: 200px;
+        width: 100px;
+        padding: 20px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
 
-        .playbutton {
-            padding: 200px;
-            width: 100px;
-            padding: 20px;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
+      .playbutton-container {
+        position: relative;
+      }
 
-        .playbutton-container {
-            position: relative;
-        }
+      .playbutton-title {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 16px;
+        color: #dcebf0;
+        font-size: 18px;
+        font-family: Arial, sans-serif; /* Set the font to Arial */
+        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
+        text-shadow: 3px 3px #0f4d61; /* Text shadow */
+      }
 
-        .playbutton-title {
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 16px;
-            color: #dcebf0;
-            font-size: 18px; 
-            font-family: Arial, sans-serif; /* Set the font to Arial */
-            text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
-            text-shadow: 3px 3px #0f4d61; /* Text shadow */
+      .audio-player-container {
+        height: 10px;
+      }
 
-        }
-
-        .audio-player-container {
-            height: 10px;
-        }
-
-        .audio-player {
-            height: 10px;
-        }
-
+      .audio-player {
+        height: 10px;
+      }
     </style>
-</head>
+  </head>
 
-<script>
+  <script>
     var audio = new Audio();
     audio.loop = true;
-  
+
     var previousButton = null;
-  
+
     function playSound(sound, buttonNumber) {
       var play = document.getElementById("playbutton-container");
       var button = play.querySelector(`#button-${buttonNumber}`);
-      var buttons = play.querySelectorAll('.playbutton');
-  
+      var buttons = play.querySelectorAll(".playbutton");
+
       audio.src = `ambient-sounds/${sound}.mp3`;
-  
+
       var otherButtonsPlaying = false;
       for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i] !== button && buttons[i].classList.contains('playing')) {
+        if (buttons[i] !== button && buttons[i].classList.contains("playing")) {
           otherButtonsPlaying = true;
           buttons[i].src = "play-icon/playbutton.png";
-          buttons[i].classList.remove('playing');
-          audio.pause()
+          buttons[i].classList.remove("playing");
+          audio.pause();
         }
       }
-  
+
       if (button.classList.contains("playing")) {
         audio.pause();
         button.src = "play-icon/playbutton.png";
-        button.classList.remove('playing');
-        button.classList.add('pause');
+        button.classList.remove("playing");
+        button.classList.add("pause");
         return;
       } else if (button.classList.contains("pause")) {
         audio.play();
         button.src = "play-icon/pausebutton.png";
-        button.classList.add('playing');
+        button.classList.add("playing");
       } else {
-        if (previousButton && previousButton.classList.contains('pause')) {
+        if (previousButton && previousButton.classList.contains("pause")) {
           audio.play();
         } else {
           audio.currentTime = 0;
           audio.play();
         }
         button.src = "play-icon/pausebutton.png";
-        button.classList.add('playing');
+        button.classList.add("playing");
       }
-  
+
       previousButton = button;
     }
-</script>
+  </script>
 
-<body>
+  <body>
     <div>
-        <h1>breatheINDAcalm</h1>
+      <button onclick="location.href='index.html'">breatheINDAcalm</button>
+      <h1>ambient sounds</h1>
+      <h2>press any play button</h2>
     </div>
 
     <div class="container" id="playbutton-container">
-        <div class="playbutton-grid-row-1">
-            <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" id="button-1" data-title="Rain" onclick="playSound('rain','1')" alt="">
-                <p class="playbutton-title">Rain</p>
-            </div>
-            <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" id="button-2" data-title="Thunder" onclick="playSound('thunder','2')" alt="">
-                <p class="playbutton-title">Thunder</p>
-            </div>
-            <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" id="button-3" data-title="Wind" onclick="playSound('wind','3')" alt="">
-                <p class="playbutton-title">Wind</p>
-            </div>
+      <div class="playbutton-grid-row-1">
+        <div class="playbutton-container">
+          <img
+            class="playbutton"
+            src="play-icon/playbutton.png"
+            id="button-1"
+            data-title="Rain"
+            onclick="playSound('rain','1')"
+            alt=""
+          />
+          <p class="playbutton-title">Rain</p>
         </div>
-        
-        <div class="playbutton-grid-row-2">
-            <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" id="button-4" data-title="Ocean" onclick="playSound('ocean','4')" alt="">
-                <p class="playbutton-title">Ocean</p>
-            </div>
-            <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" id="button-5" data-title="Forest" onclick="playSound('forest','5')" alt="">
-                <p class="playbutton-title">Forest</p>
-            </div>
-            <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" id="button-6" data-title="Fire" onclick="playSound('fire','6')" alt="">
-                <p class="playbutton-title">Fire</p>
-            </div>
+        <div class="playbutton-container">
+          <img
+            class="playbutton"
+            src="play-icon/playbutton.png"
+            id="button-2"
+            data-title="Thunder"
+            onclick="playSound('thunder','2')"
+            alt=""
+          />
+          <p class="playbutton-title">Thunder</p>
         </div>
+        <div class="playbutton-container">
+          <img
+            class="playbutton"
+            src="play-icon/playbutton.png"
+            id="button-3"
+            data-title="Wind"
+            onclick="playSound('wind','3')"
+            alt=""
+          />
+          <p class="playbutton-title">Wind</p>
+        </div>
+      </div>
+
+      <div class="playbutton-grid-row-2">
+        <div class="playbutton-container">
+          <img
+            class="playbutton"
+            src="play-icon/playbutton.png"
+            id="button-4"
+            data-title="Ocean"
+            onclick="playSound('ocean','4')"
+            alt=""
+          />
+          <p class="playbutton-title">Ocean</p>
+        </div>
+        <div class="playbutton-container">
+          <img
+            class="playbutton"
+            src="play-icon/playbutton.png"
+            id="button-5"
+            data-title="Forest"
+            onclick="playSound('forest','5')"
+            alt=""
+          />
+          <p class="playbutton-title">Forest</p>
+        </div>
+        <div class="playbutton-container">
+          <img
+            class="playbutton"
+            src="play-icon/playbutton.png"
+            id="button-6"
+            data-title="Fire"
+            onclick="playSound('fire','6')"
+            alt=""
+          />
+          <p class="playbutton-title">Fire</p>
+        </div>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>
