@@ -78,7 +78,7 @@
             right: 0;
             text-align: center;
             font-size: 16px;
-            color: #fff;
+            color: #dcebf0;
             font-size: 18px; 
             font-family: Arial, sans-serif; /* Set the font to Arial */
             text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
@@ -98,11 +98,50 @@
 </head>
 
 <script>
-    function playSound(videoID) {
-        var videoPlayer = document.getElementById("audio-player");
-        var iframe = videoPlayer.querySelector("iframe");
-
-        iframe.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
+    var audio = new Audio();
+    audio.loop = true;
+  
+    var previousButton = null;
+  
+    function playSound(sound, buttonNumber) {
+      var play = document.getElementById("playbutton-container");
+      var button = play.querySelector(`#button-${buttonNumber}`);
+      var buttons = play.querySelectorAll('.playbutton');
+  
+      audio.src = `ambient-sounds/${sound}.mp3`;
+  
+      var otherButtonsPlaying = false;
+      for (var i = 0; i < buttons.length; i++) {
+        if (buttons[i] !== button && buttons[i].classList.contains('playing')) {
+          otherButtonsPlaying = true;
+          buttons[i].src = "play-icon/playbutton.png";
+          buttons[i].classList.remove('playing');
+          audio.pause()
+        }
+      }
+  
+      if (button.classList.contains("playing")) {
+        audio.pause();
+        button.src = "play-icon/playbutton.png";
+        button.classList.remove('playing');
+        button.classList.add('pause');
+        return;
+      } else if (button.classList.contains("pause")) {
+        audio.play();
+        button.src = "play-icon/pausebutton.png";
+        button.classList.add('playing');
+      } else {
+        if (previousButton && previousButton.classList.contains('pause')) {
+          audio.play();
+        } else {
+          audio.currentTime = 0;
+          audio.play();
+        }
+        button.src = "play-icon/pausebutton.png";
+        button.classList.add('playing');
+      }
+  
+      previousButton = button;
     }
 </script>
 
@@ -111,51 +150,37 @@
         <h1>breatheINDAcalm</h1>
     </div>
 
-    <div class="audio-player-container">
-        <div class="audio-player">
-            <iframe 
-            width="560" 
-            height="315" 
-            src="" 
-            title="" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-            </iframe>       
-        </div>
-    </div>
-
-    <div class="container">
+    <div class="container" id="playbutton-container">
         <div class="playbutton-grid-row-1">
             <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" data-title="Rain" onclick="playSound('SnUBb-FAlCY')" alt="">
+                <img class="playbutton" src="play-icon/playbutton.png" id="button-1" data-title="Rain" onclick="playSound('rain','1')" alt="">
                 <p class="playbutton-title">Rain</p>
             </div>
             <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" data-title="Thunder" onclick="playSound()" alt="">
+                <img class="playbutton" src="play-icon/playbutton.png" id="button-2" data-title="Thunder" onclick="playSound('thunder','2')" alt="">
                 <p class="playbutton-title">Thunder</p>
             </div>
             <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" data-title="Wind" onclick="playSound()" alt="">
+                <img class="playbutton" src="play-icon/playbutton.png" id="button-3" data-title="Wind" onclick="playSound('wind','3')" alt="">
                 <p class="playbutton-title">Wind</p>
             </div>
         </div>
+        
         <div class="playbutton-grid-row-2">
             <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" data-title="Ocean" onclick="playSound()" alt="">
+                <img class="playbutton" src="play-icon/playbutton.png" id="button-4" data-title="Ocean" onclick="playSound('ocean','4')" alt="">
                 <p class="playbutton-title">Ocean</p>
             </div>
             <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" data-title="Forest" onclick="playSound()" alt="">
+                <img class="playbutton" src="play-icon/playbutton.png" id="button-5" data-title="Forest" onclick="playSound('forest','5')" alt="">
                 <p class="playbutton-title">Forest</p>
             </div>
             <div class="playbutton-container">
-                <img class="playbutton" src="play-icon/playbutton.png" data-title="Fire" onclick="playSound()" alt="">
+                <img class="playbutton" src="play-icon/playbutton.png" id="button-6" data-title="Fire" onclick="playSound('fire','6')" alt="">
                 <p class="playbutton-title">Fire</p>
             </div>
         </div>
     </div>
     
-
 </body>
 </html>
