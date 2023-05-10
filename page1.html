@@ -10,18 +10,49 @@
       background-color: #6ba3bc;
     }
 
+    h1 {
+        text-align: center;
+        font-size: 60px;
+        color: #a2d6e7;
+        margin-top: 0px; /* Space at the top */
+        margin-bottom: 40px; /* Space at the top */
+        text-shadow: 3px 3px #0f4d61; /* Text shadow */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      button {
+        background-color: #6ba3bc;
+        border: 2px solid #6ba3bc;
+        cursor: pointer;
+        font-size: 30px;
+        color: #b8dce8;
+        text-align: center;
+        font-weight: bold; /* Made the text bold */
+        margin: 0 auto; /* Center the button horizontally */
+        display: block; /* Make the button a block element */
+        margin-top: 20px;
+        margin-bottom: 0px;
+        text-shadow: 2px 2px #0f4d61; /* Text shadow */
+        font-family: "Times New Roman", Times, serif;
+      }
+
+
     .video-player-container {
       display: flex;
+      border-radius: 50px;
       justify-content: center;
       align-items: center;
       width: 700px;
       height: 420px;
-      background-color: #7CB9E8;
+      background-color: #8acadd;
       margin: 0 auto;
     }
 
     .gallery-container {
-      background-color: lightblue;
+      background-color: #a2d9ea;
+      border-radius: 20px;
       margin: 0 auto;
       margin-top: 30px;
       width: 900px;
@@ -45,41 +76,18 @@
 
     #start-text {
       position: absolute;
+      font-size: 23px;
       z-index: 1;
-      top: 41vh;
+      top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: aliceblue;
-      text-shadow: 1px 1px 1px #062f88; /* Border around the text */
+      color: #1f5d6d;
     }
 
     img {
       width: 200px;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 80px;
-      color: #a2d6e7;
-      margin-top: 50px; /* Space at the top */
-      margin-bottom: 40px; /* Space at the top */
-      text-shadow: 3px 3px #0f4d61; /* Text shadow */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    h1::before {
-      content: "\1f30a"; /* Emoji before the h1 text */
-      font-size: 30px;
-      margin-right: 20px;
-    }
-
-    h1::after {
-      content: "\1f4a8"; /* Emoji after the h1 text */
-      font-size: 30px;
-      margin-left: 20px;
-    }
   </style>
 </head>
 
@@ -103,7 +111,8 @@
 
 <body>
   <div>
-    <h1>breatheINDAcalm</h1>
+    <button onclick="location.href='index.html'">breatheINDAcalm</button>
+    <h1>guided meditations</h1>
   </div>
 
   <div>
