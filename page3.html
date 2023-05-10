@@ -44,6 +44,17 @@
         font-family: "Times New Roman", Times, serif;
       }
 
+      .breathe-1 {
+        position: relative;
+      }
+
+      .breathe-2 {
+        position: relative;
+      }
+
+      .breathe-3 {
+        position: relative;
+      }
     </style>
 
     <style type="text/css">
@@ -68,6 +79,72 @@
         font-weight: bold; /* Made the text bold */
         top: 30%;
         right: 4%;
+      }
+
+      .breathing-button {
+        padding: 15px 32px;
+        text-decoration: none;
+        margin: 0px 5px;
+        margin-top: 100px;
+        left: 4%;
+        position: absolute;
+      }
+      
+      #button-b1 {
+        left: 36px;
+        position: relative;
+        background-color: #a2d9ea; /* Color */
+        border: 2px solid #add2de;
+        border-radius: 20px; /* Rounded corners */
+        color: #367787;
+        padding: 12px 29px;
+        cursor: pointer;
+        font-size: 20px;
+        text-align: left;
+        font-weight: bold; /* Made the text bold */
+        margin: 0 auto; /* Center the button horizontally */
+        margin-top: 20px;
+        margin-bottom: 0px;
+        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
+        font-family: Arial, Helvetica, sans-serif
+      }
+
+      #button-b2 {
+        left: -30px;
+        position: relative;
+        background-color: #a2d9ea; /* Color */
+        border: 2px solid #add2de;
+        border-radius: 20px; /* Rounded corners */
+        color: #367787;
+        padding: 12px 29px;
+        cursor: pointer;
+        font-size: 20px;
+        text-align: left;
+        font-weight: bold; /* Made the text bold */
+        margin: 0 auto; /* Center the button horizontally */
+        margin-top: 20px;
+        margin-bottom: 0px;
+        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
+        font-family: Arial, Helvetica, sans-serif
+      }
+
+      #button-b3 {
+        left: 13px;
+        position: relative;
+        background-color: #a2d9ea; /* Color */
+        border: 2px solid #add2de;
+        border-radius: 20px; /* Rounded corners */
+        color: #367787;
+        padding: 12px 29px;
+        cursor: pointer;
+        font-size: 20px;
+        text-align: left;
+        font-weight: bold; /* Made the text bold */
+        margin: 0 auto; /* Center the button horizontally */
+        margin-top: 20px;
+        margin-bottom: 0px;
+        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
+        font-family: Arial, Helvetica, sans-serif
       }
 
       #button {
@@ -109,6 +186,7 @@
         text-shadow: 0px 0px 1px #367787; /* Border around the text */
         margin-top: 60px;
       }
+
 
       #square {
         width: 400px;
@@ -154,7 +232,6 @@
         left: 10px;
         cursor: pointer;
       }
-
     </style>
   </head>
 
@@ -162,40 +239,92 @@
     <center>
       <button onclick="location.href='index.html'">breatheINDAcalm</button>
       <h1>breathing exercises</h1>
-      <h2>breathing in a square</h2>
-      <div id="square">
-        <div id="ball"></div>
-        <div id="realSquare">
-          <div id="text"></div>
+      <div class="breathing-button">
+        <button id="button-b1">breathing in a square</button> 
+        <button id="button-b2">4 - 7 - 8</button>
+        <button id="button-b3">flower breathing</button>
+      </div>
+      
+      <div id="breathe-1">
+        <h2>breathing in a square</h2>
+        <div id="square">
+          <div id="ball"></div>
+          <div id="realSquare">
+            <div id="text"></div>
+          </div>
+        </div>
+        <button id="button">click here to start</button>
+        <button id="buttoni">i</button>
+        <div id="infoBox">
+          This is breathing exercise where you breathe <br />
+          in a square. <br />
+          The breathing exercise involves 5 second <br />
+          intervals of inhaling, exhaling and holding <br />
+          your breath.
+          <br />
+          <br />
+          To go back to the home page with the menu, <br />
+          simply click on the "breatheINDAcalm"-button <br />
+          at the top of the page.
+          <span id="closeButton">&times;</span>
         </div>
       </div>
-      <button id="button">click here to start</button>
-      <button id="buttoni">i</button>
-      <div id="infoBox">
-        This is breathing exercise where you breathe <br />
-        in a square. <br />
-        The breathing exercise involves 5 second <br />
-        intervals of inhaling, exhaling and holding <br />
-        your breath.
-        <br />
-        <br />
-        To go back to the home page with the menu, <br />
-        simply click on the "breatheINDAcalm"-button <br />
-        at the top of the page.
-        <span id="closeButton">&times;</span>
+
+      <div id="breathe-2">
+        <h2>wazzup</h2>
+        <button id="button">click here to start</button>
+        <button id="buttoni">i</button>
+        <div id="infoBox">
+          This is breathing exercise where you inhale <br />
+          for 4 seconds, hold for 5 seconds, and then <br />
+          exhale for 8 seconds.
+          <br />
+          <br />
+          To go back to the home page with the menu, <br />
+          simply click on the "breatheINDAcalm"-button <br />
+          at the top of the page.
+          <span id="closeButton">&times;</span>
+        </div>
+      </div>
+
+      <div id="breathe-3">
+        <h2>wazzup2</h2>
+        <button id="button">click here to start</button>
+        <button id="buttoni">i</button>
+        <div id="infoBox">
+          This is breathing exercise where you inhale <br />
+          for 4 seconds, hold for 5 seconds, and then <br />
+          exhale for 8 seconds.
+          <br />
+          <br />
+          To go back to the home page with the menu, <br />
+          simply click on the "breatheINDAcalm"-button <br />
+          at the top of the page.
+          <span id="closeButton">&times;</span>
+        </div>
       </div>
 
       <script type="text/javascript">
+        //main functions
+        const buttonb1 = document.getElementById("button-b1")
+        const buttonb2 = document.getElementById("button-b2")
+        const buttonb3 = document.getElementById("button-b3")
+        const breathe1 = document.getElementById("breathe-1");
+        const breathe2 = document.getElementById("breathe-2");
+        const breathe3 = document.getElementById("breathe-3");
+        
+        // script for the square breathing exersice. 
+        const button = document.getElementById("button");
+        const infoBox = document.getElementById("infoBox");
+        const closeButton = document.getElementById("closeButton");
+        const buttoni = document.getElementById("buttoni");
         var square = document.getElementById("square");
         var realSquare = document.getElementById("realSquare");
         var text = document.getElementById("text");
         var ball = document.getElementById("ball");
-        const button = document.getElementById("button");
-        const buttoni = document.getElementById("buttoni");
-        const infoBox = document.getElementById("infoBox");
-        const closeButton = document.getElementById("closeButton");
         var squareWidth = square.offsetWidth - ball.offsetWidth;
         var squareHeight = square.offsetHeight - ball.offsetHeight;
+
 
         let x = 0;
         let y = squareHeight;
@@ -225,6 +354,7 @@
           ball.style.left = x + "px";
         }
 
+        // to start moving the ball, and will only allow it to be pressed once
         button.addEventListener("click", hello);
         var number = 0;
 
@@ -235,8 +365,8 @@
           }
         }
 
+        // function to know if the inbox should close or open when the button is selected
         buttoni.addEventListener("click", openOrClose);
-
         var peter = 1;
         function openOrClose() {
           if (peter % 2 != 0) {
@@ -256,6 +386,33 @@
           peter++;
           infoBox.style.display = "none";
         });
+
+        // the buttons to select which breathing exercise to show
+        buttonb1.addEventListener("click", display1);
+        function display1() {
+          breathe1.style.display = "block";
+          breathe2.style.display = "none";
+          breathe3.style.display = "none";
+        }
+
+        buttonb2.addEventListener("click", display2);
+        function display2() {
+          breathe1.style.display = "none";
+          breathe2.style.display = "block";
+          breathe3.style.display = "none";
+        }
+
+        buttonb3.addEventListener("click", display3);
+        function display3() {
+          breathe1.style.display = "none";
+          breathe2.style.display = "none";
+          breathe3.style.display = "block";
+        }
+
+          breathe1.style.display = "none";
+          breathe2.style.display = "none";
+          breathe3.style.display = "none";
+
       </script>
     </center>
   </body>
