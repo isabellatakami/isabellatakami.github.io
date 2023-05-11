@@ -11,4 +11,4 @@ Are you feeling stressed? Did you fail Linear Algebra for the third time in a ro
 - Timer<3
 
 ### 🌊 Access through
-//insert website here later on
+isabellatakami.github.io
