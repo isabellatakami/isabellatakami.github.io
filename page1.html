@@ -38,7 +38,6 @@
         font-family: "Times New Roman", Times, serif;
       }
 
-
     .video-player-container {
       display: flex;
       border-radius: 50px;
@@ -92,6 +91,7 @@
 </head>
 
 <script>
+  /* Changes source of embedded video in iframe when a new thumbnail is clicked in the playlist. */
   function changeVideo(videoID) {
     var videoPlayer = document.getElementById("current-video");
     var iframe = videoPlayer.querySelector("iframe");
