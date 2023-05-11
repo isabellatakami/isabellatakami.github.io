@@ -114,7 +114,7 @@
 
     var previousButton = null;
 
-/* Changes source of sound when button is clicked  */    
+/* Changes source of sound when button is clicked. */    
     function playSound(sound, buttonNumber) {
       var play = document.getElementById("playbutton-container");
       var button = play.querySelector(`#button-${buttonNumber}`);
@@ -124,7 +124,7 @@
 
       var otherButtonsPlaying = false;
       for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i] !== button && buttons[i].classList.contains("playing")) {
+        if (buttons[i] !== button && buttons[i].classList.contains("playing")) { /* Handles if another button is playing. */
           otherButtonsPlaying = true;
           buttons[i].src = "play-icon/playbutton.png";
           buttons[i].classList.remove("playing");
@@ -132,18 +132,18 @@
         }
       }
 
-      if (button.classList.contains("playing")) {
+      if (button.classList.contains("playing")) { /* Pauses sound if current button is playing. */
         audio.pause();
         button.src = "play-icon/playbutton.png";
         button.classList.remove("playing");
         button.classList.add("pause");
         return;
-      } else if (button.classList.contains("pause")) {
+      } else if (button.classList.contains("pause")) { /* Plays sound if current button is paused. */
         audio.play();
         button.src = "play-icon/pausebutton.png";
         button.classList.add("playing");
       } else {
-        if (previousButton && previousButton.classList.contains("pause")) {
+        if (previousButton && previousButton.classList.contains("pause")) { /* Pauses previous sound and plays new sound when a new button is clicked. */
           audio.play();
         } else {
           audio.currentTime = 0;
