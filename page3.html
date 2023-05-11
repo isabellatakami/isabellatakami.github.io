@@ -1,238 +1,6 @@
 <html>
   <head>
-    <style>
-      body {
-        background-color: #6ba3bc;
-      }
-
-      h1 {
-        text-align: center;
-        font-size: 60px;
-        color: #a2d6e7;
-        margin-top: 0px; /* Space at the top */
-        margin-bottom: 40px; /* Space at the top */
-        text-shadow: 3px 3px #0f4d61; /* Text shadow */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      h2 {
-        text-align: center;
-        font-size: 23px;
-        color: #043c4e;
-        margin-top: 0px; /* Space at the top */
-        margin-bottom: 40 px; /* Space at the top */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      button {
-        background-color: #6ba3bc;
-        border: 2px solid #6ba3bc;
-        cursor: pointer;
-        font-size: 30px;
-        color: #b8dce8;
-        text-align: center;
-        font-weight: bold; /* Made the text bold */
-        margin: 0 auto; /* Center the button horizontally */
-        display: block; /* Make the button a block element */
-        margin-top: 20px;
-        margin-bottom: 0px;
-        text-shadow: 2px 2px #0f4d61; /* Text shadow */
-        font-family: "Times New Roman", Times, serif;
-      }
-
-      .breathe-1 {
-        position: relative;
-      }
-
-      .breathe-2 {
-        position: relative;
-      }
-
-      .breathe-3 {
-        position: relative;
-      }
-    </style>
-
-    <style type="text/css">
-      canvas {
-        margin-top: 100px; /* Space at the top */
-        margin-bottom: 40px; /* Space at the top */
-      }
-    </style>
-
-    <style type="text/css">
-      #infoBox {
-        display: none;
-        background-color: #a2d9ea;
-        border: 1px solid #add2de;
-        color: #367787;
-        font-size: 18px;
-        border-radius: 20px; /* Rounded corners */
-        font-family: Arial, sans-serif; /* Set the font to Arial */
-        padding: 30px;
-        position: absolute;
-        text-align: left;
-        font-weight: bold; /* Made the text bold */
-        top: 30%;
-        right: 4%;
-      }
-
-      .breathing-button {
-        padding: 15px 32px;
-        text-decoration: none;
-        margin: 0px 5px;
-        margin-top: 100px;
-        left: 4%;
-        position: absolute;
-      }
-      
-      #button-b1 {
-        left: 36px;
-        position: relative;
-        background-color: #a2d9ea; /* Color */
-        border: 2px solid #add2de;
-        border-radius: 20px; /* Rounded corners */
-        color: #367787;
-        padding: 12px 29px;
-        cursor: pointer;
-        font-size: 20px;
-        text-align: left;
-        font-weight: bold; /* Made the text bold */
-        margin: 0 auto; /* Center the button horizontally */
-        margin-top: 20px;
-        margin-bottom: 0px;
-        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
-        font-family: Arial, Helvetica, sans-serif
-      }
-
-      #button-b2 {
-        left: -30px;
-        position: relative;
-        background-color: #a2d9ea; /* Color */
-        border: 2px solid #add2de;
-        border-radius: 20px; /* Rounded corners */
-        color: #367787;
-        padding: 12px 29px;
-        cursor: pointer;
-        font-size: 20px;
-        text-align: left;
-        font-weight: bold; /* Made the text bold */
-        margin: 0 auto; /* Center the button horizontally */
-        margin-top: 20px;
-        margin-bottom: 0px;
-        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
-        font-family: Arial, Helvetica, sans-serif
-      }
-
-      #button-b3 {
-        left: 13px;
-        position: relative;
-        background-color: #a2d9ea; /* Color */
-        border: 2px solid #add2de;
-        border-radius: 20px; /* Rounded corners */
-        color: #367787;
-        padding: 12px 29px;
-        cursor: pointer;
-        font-size: 20px;
-        text-align: left;
-        font-weight: bold; /* Made the text bold */
-        margin: 0 auto; /* Center the button horizontally */
-        margin-top: 20px;
-        margin-bottom: 0px;
-        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
-        font-family: Arial, Helvetica, sans-serif
-      }
-
-      #button {
-        background-color: #a2d9ea; /* Color */
-        border: 2px solid #add2de;
-        border-radius: 20px; /* Rounded corners */
-        color: #367787;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 0px 5px;
-        cursor: pointer;
-        letter-spacing: 2px; /* Space between the letters */
-        font-weight: bold; /* Made the text bold */
-        font-size: 20px;
-        font-family: Arial, sans-serif; /* Set the font to Arial */
-        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
-        margin-top: 60px;
-      }
-
-      #buttoni {
-        background-color: #a2d9ea; /* Color */
-        border: 2px solid #add2de;
-        border-radius: 30px; /* Rounded corners */
-        color: #367787;
-        padding: 10px 18px;
-        text-align: justify;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 50px;
-        margin: 0px 5px;
-        cursor: pointer;
-        letter-spacing: 2px; /* Space between the letters */
-        font-weight: bold; /* Made the text bold */
-        font-size: 20px;
-        font-family: Arial, sans-serif; /* Set the font to Arial */
-        text-shadow: 0px 0px 1px #367787; /* Border around the text */
-        margin-top: 60px;
-      }
-
-
-      #square {
-        width: 400px;
-        height: 400px;
-        border: 2px solid #6ba3bc;
-        position: relative;
-      }
-
-      #realSquare {
-        width: 350px;
-        height: 350px;
-        border: 5px solid #b8dce8;
-        position: relative;
-        margin-top: 25;
-        border-radius: 25px; /* Rounded corners */
-      }
-
-      #text {
-        color: #0a6e87;
-        text-align: center;
-        display: inline-block;
-        font-size: 25px;
-        letter-spacing: 2px; /* Space between the letters */
-        font-weight: bold; /* Made the text bold */
-        font-family: Arial, sans-serif; /* Set the font to Arial */
-        text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
-        margin-top: 165;
-        margin-bottom: 159px;
-      }
-
-      #ball {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #b8dce8;
-        position: absolute;
-        top: 355px;
-        left: 0px;
-      }
-      #closeButton {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="page3.css">
   </head>
 
   <body>
@@ -240,9 +8,10 @@
       <button onclick="location.href='index.html'">breatheINDAcalm</button>
       <h1>breathing exercises</h1>
       <div class="breathing-button">
+        <h3>select a breathing exercise</h2>
         <button id="button-b1">breathing in a square</button> 
         <button id="button-b2">4 - 7 - 8</button>
-        <button id="button-b3">flower breathing</button>
+        <button id="button-b3">visual breathing</button>
       </div>
       
       <div id="breathe-1">
@@ -271,36 +40,36 @@
       </div>
 
       <div id="breathe-2">
-        <h2>wazzup</h2>
-        <button id="button">click here to start</button>
-        <button id="buttoni">i</button>
-        <div id="infoBox">
-          This is breathing exercise where you inhale <br />
-          for 4 seconds, hold for 5 seconds, and then <br />
-          exhale for 8 seconds.
-          <br />
-          <br />
-          To go back to the home page with the menu, <br />
-          simply click on the "breatheINDAcalm"-button <br />
-          at the top of the page.
-          <span id="closeButton">&times;</span>
+        <h2>4 - 7 - 8</h2>
+        <div class="container">
+          <div id="circle-container">
+            <div id="circle">
+              <div id="timer-text">Breathe in</div>
+            </div>
+          </div>
+          <br>
+          <button id="start-button">click here to start</button>
+        </div>
         </div>
       </div>
 
       <div id="breathe-3">
-        <h2>wazzup2</h2>
-        <button id="button">click here to start</button>
-        <button id="buttoni">i</button>
-        <div id="infoBox">
-          This is breathing exercise where you inhale <br />
-          for 4 seconds, hold for 5 seconds, and then <br />
-          exhale for 8 seconds.
-          <br />
-          <br />
-          To go back to the home page with the menu, <br />
-          simply click on the "breatheINDAcalm"-button <br />
-          at the top of the page.
-          <span id="closeButton">&times;</span>
+        <h2>select a button for visual breathing</h2>
+        <br><br>
+        <div>
+            <img
+            src="https://cdn.doyou.com/articles/7b-1575919919782.gif=w1080"
+            alt="My GIF"
+            width="400"
+            height="400"
+            id="gb1-gif"
+            />
+        </div>
+        
+        <div>
+            <button class="gb" onclick="show1()">air balloon</button>
+            <button class="gb" onclick="show2()">moon</button>
+            <button class="gb" onclick="show3()">calm person</button>
         </div>
       </div>
 
@@ -313,6 +82,9 @@
         const breathe2 = document.getElementById("breathe-2");
         const breathe3 = document.getElementById("breathe-3");
         
+        //gifs
+        const gifimg = document.getElementById("gb1-gif")
+
         // script for the square breathing exersice. 
         const button = document.getElementById("button");
         const infoBox = document.getElementById("infoBox");
@@ -409,10 +181,54 @@
           breathe3.style.display = "block";
         }
 
-          breathe1.style.display = "none";
+          breathe1.style.display = "block";
           breathe2.style.display = "none";
           breathe3.style.display = "none";
 
+
+      // the gifs 
+      function show1() {
+        gifimg.src = "https://cdn.doyou.com/articles/7b-1575919919782.gif=w1080";
+      }
+
+      function show2() {
+        gifimg.src = "https://i.gifer.com/embedded/download/6EGj.gif";
+      }
+
+      function show3() {
+        gifimg.src = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0a2ba2111109037.5ffc84dc1d61d.gif";
+      }
+      
+      window.addEventListener('DOMContentLoaded', function() {
+      var timerElement = document.getElementById('timer-text');
+      var circleElement = document.getElementById('circle');
+      var startButton = document.getElementById('start-button');
+      var inhaleTime = 4; // Inhale time in seconds
+      var holdTime = 7;   // Hold time in seconds
+      var exhaleTime = 8; // Exhale time in seconds
+
+      function startTimer() {
+        timerElement.innerHTML = 'Breathe in';
+        circleElement.classList.add('expand');
+        setTimeout(function() {
+          timerElement.innerHTML = 'Hold';
+          setTimeout(function() {
+            timerElement.innerHTML = 'Exhale';
+            circleElement.classList.add('shrink');
+            setTimeout(function() {
+              timerElement.innerHTML = 'Breathe in';
+              circleElement.classList.remove('shrink');
+              circleElement.classList.add('expand');
+              startTimer();
+            }, inhaleTime * 1000);
+          }, holdTime * 1000);
+        }, inhaleTime * 1000);
+      }
+
+      startButton.addEventListener('click', function() {
+        startTimer();
+      });
+    });
       </script>
     </center>
   </body>
