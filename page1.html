@@ -94,7 +94,7 @@
   /* Changes source of embedded video in iframe when a new thumbnail is clicked in the playlist. */
   function changeVideo(videoID) {
     var videoPlayer = document.getElementById("current-video");
-    var iframe = videoPlayer.querySelector("iframe");
+    var iframe = videoPlayer.querySelector("iframe"); 
 
     iframe.src = `https://www.youtube.com/embed/${videoID}`
     hideStartText();
@@ -191,7 +191,6 @@
         onclick="changeVideo('Re6BrOfJSHk')"
         alt="">
       </div>
-
     </div>
   </div>
   </html>
