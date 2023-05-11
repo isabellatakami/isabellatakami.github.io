@@ -25,6 +25,17 @@ body {
     justify-content: center;
   }
 
+  h3 {
+    text-align: center;
+    font-size: 23px;
+    color: #b9e5f3;
+    margin-top: 0px; /* Space at the top */
+    margin-bottom: 40 px; /* Space at the top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   button {
     background-color: #6ba3bc;
     border: 2px solid #6ba3bc;
@@ -85,7 +96,7 @@ body {
   }
 
   #button-b1 {
-    left: 36px;
+    left: 25px;
     position: relative;
     background-color: #a2d9ea; /* Color */
     border: 2px solid #add2de;
@@ -105,7 +116,7 @@ body {
   }
 
   #button-b2 {
-    left: -42px;
+    left: -53px;
     position: relative;
     background-color: #a2d9ea; /* Color */
     border: 2px solid #add2de;
@@ -125,7 +136,7 @@ body {
   }
 
   #button-b3 {
-    left: 8px;
+    left: -3px;
     position: relative;
     background-color: #a2d9ea; /* Color */
     border: 2px solid #add2de;
@@ -249,5 +260,71 @@ body {
     text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
     margin-top: 60px;
     display: inline !important;
+  }
+
+  /* 478 breathing exercise */
+  .container {
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  #timer {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+
+  #circle-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 50px auto;
+  }
+
+  #circle {
+    width: 100%;
+    height: 100%;
+    background-color: #8ac3d5;
+    border-radius: 50%;
+    transition: transform 4s ease-out; /* Customize transition duration here */
+    transform: scale(0.6); /* Initial small size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #circle.expand {
+    transform: scale(1.5); /* Fully expanded during hold phase */
+  }
+
+  #circle.shrink {
+    transform: scale(0.5); /* Slowly shrink during exhale phase */
+  }
+
+  #timer-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  #start-button {
+    margin-top: 30px;
+    background-color: #a2d9ea; /* Color */
+    border: 2px solid #add2de;
+    border-radius: 20px; /* Rounded corners */
+    color: #367787;
+    padding: 12px 29px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 5px;
+    cursor: pointer;
+    letter-spacing: 2px; /* Space between the letters */
+    font-weight: bold; /* Made the text bold */
+    font-size: 20px;
+    font-family: Arial, sans-serif; /* Set the font to Arial */
+    text-shadow: 0px 0px 0px #ffffff; /* Border around the text */
+    margin-top: 60px;
   }
 

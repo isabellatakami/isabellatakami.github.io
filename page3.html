@@ -8,6 +8,7 @@
       <button onclick="location.href='index.html'">breatheINDAcalm</button>
       <h1>breathing exercises</h1>
       <div class="breathing-button">
+        <h3>select a breathing exercise</h2>
         <button id="button-b1">breathing in a square</button> 
         <button id="button-b2">4 - 7 - 8</button>
         <button id="button-b3">visual breathing</button>
@@ -40,18 +41,15 @@
 
       <div id="breathe-2">
         <h2>4 - 7 - 8</h2>
-        <button id="button">click here to start</button>
-        <button id="buttoni">i</button>
-        <div id="infoBox">
-          This is breathing exercise where you inhale <br />
-          for 4 seconds, hold for 5 seconds, and then <br />
-          exhale for 8 seconds.
-          <br />
-          <br />
-          To go back to the home page with the menu, <br />
-          simply click on the "breatheINDAcalm"-button <br />
-          at the top of the page.
-          <span id="closeButton">&times;</span>
+        <div class="container">
+          <div id="circle-container">
+            <div id="circle">
+              <div id="timer-text">Breathe in</div>
+            </div>
+          </div>
+          <br>
+          <button id="start-button">click here to start</button>
+        </div>
         </div>
       </div>
 
@@ -183,7 +181,7 @@
           breathe3.style.display = "block";
         }
 
-          breathe1.style.display = "none";
+          breathe1.style.display = "block";
           breathe2.style.display = "none";
           breathe3.style.display = "none";
 
@@ -201,6 +199,36 @@
         gifimg.src = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0a2ba2111109037.5ffc84dc1d61d.gif";
       }
       
+      window.addEventListener('DOMContentLoaded', function() {
+      var timerElement = document.getElementById('timer-text');
+      var circleElement = document.getElementById('circle');
+      var startButton = document.getElementById('start-button');
+      var inhaleTime = 4; // Inhale time in seconds
+      var holdTime = 7;   // Hold time in seconds
+      var exhaleTime = 8; // Exhale time in seconds
+
+      function startTimer() {
+        timerElement.innerHTML = 'Breathe in';
+        circleElement.classList.add('expand');
+        setTimeout(function() {
+          timerElement.innerHTML = 'Hold';
+          setTimeout(function() {
+            timerElement.innerHTML = 'Exhale';
+            circleElement.classList.add('shrink');
+            setTimeout(function() {
+              timerElement.innerHTML = 'Breathe in';
+              circleElement.classList.remove('shrink');
+              circleElement.classList.add('expand');
+              startTimer();
+            }, inhaleTime * 1000);
+          }, holdTime * 1000);
+        }, inhaleTime * 1000);
+      }
+
+      startButton.addEventListener('click', function() {
+        startTimer();
+      });
+    });
       </script>
     </center>
   </body>
