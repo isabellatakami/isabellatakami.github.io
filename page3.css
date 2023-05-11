@@ -1,3 +1,5 @@
+/* css for page 3 (breathing exercises)*/
+
 body {
     background-color: #6ba3bc;
   }
@@ -52,6 +54,7 @@ body {
     font-family: "Times New Roman", Times, serif;
   }
 
+  /* containers for different breathing exercises*/
   .breathe-1 {
     position: relative;
   }
@@ -95,6 +98,7 @@ body {
     position: absolute;
   }
 
+  /* buttons b1, b2, b3 are the different buttons for the breathing exercises */
   #button-b1 {
     left: 25px;
     position: relative;
@@ -307,6 +311,7 @@ body {
     color: #fff;
   }
 
+  /* start button for 478 */
   #start-button {
     margin-top: 30px;
     background-color: #a2d9ea; /* Color */
