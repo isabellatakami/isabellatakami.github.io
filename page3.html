@@ -1,3 +1,4 @@
+<!-- html for page 3 (breathing exercises) -->
 <html>
   <head>
     <link rel="stylesheet" href="page3.css">
@@ -5,6 +6,7 @@
 
   <body>
     <center>
+      <!-- constant title, buttons etc that stay on the page -->
       <button onclick="location.href='index.html'">breatheINDAcalm</button>
       <h1>breathing exercises</h1>
       <div class="breathing-button">
@@ -14,16 +16,17 @@
         <button id="button-b3">visual breathing</button>
       </div>
       
+      <!-- first breathing exercise container (breathing in a square) -->
       <div id="breathe-1">
         <h2>breathing in a square</h2>
-        <div id="square">
+        <div id="square"> <!-- visual for square breathing -->
           <div id="ball"></div>
           <div id="realSquare">
             <div id="text"></div>
           </div>
         </div>
-        <button id="button">click here to start</button>
-        <button id="buttoni">i</button>
+        <button id="button">click here to start</button> <!-- start button -->
+        <button id="buttoni">i</button> <!-- infobutton that can close and open-->
         <div id="infoBox">
           This is breathing exercise where you breathe <br />
           in a square. <br />
@@ -39,25 +42,27 @@
         </div>
       </div>
 
+      <!-- second breathing exercise container (478) -->
       <div id="breathe-2">
         <h2>4 - 7 - 8</h2>
-        <div class="container">
+        <div class="container"> <!-- the expanding/shrinking circle that visually represents the breathing -->
           <div id="circle-container">
             <div id="circle">
               <div id="timer-text">Breathe in</div>
             </div>
           </div>
           <br>
-          <button id="start-button">click here to start</button>
+          <button id="start-button">click here to start</button> <!-- button that starts the breathing exercise -->
         </div>
         </div>
       </div>
 
+      <!-- third breathing exercise container (calming gifs) -->
       <div id="breathe-3">
         <h2>select a button for visual breathing</h2>
         <br><br>
-        <div>
-            <img
+        <div> <!-- the size and id of the gifs, with the starting gif -->
+            <img 
             src="https://cdn.doyou.com/articles/7b-1575919919782.gif=w1080"
             alt="My GIF"
             width="400"
@@ -66,7 +71,7 @@
             />
         </div>
         
-        <div>
+        <div> <!-- buttons for different gifs -->
             <button class="gb" onclick="show1()">air balloon</button>
             <button class="gb" onclick="show2()">moon</button>
             <button class="gb" onclick="show3()">calm person</button>
@@ -74,7 +79,7 @@
       </div>
 
       <script type="text/javascript">
-        //main functions
+        // main functions for the constant buttons and containers 
         const buttonb1 = document.getElementById("button-b1")
         const buttonb2 = document.getElementById("button-b2")
         const buttonb3 = document.getElementById("button-b3")
@@ -85,14 +90,14 @@
         //gifs
         const gifimg = document.getElementById("gb1-gif")
 
-        // script for the square breathing exersice. 
-        const button = document.getElementById("button");
+        // script for the square breathing exersice
+        const button = document.getElementById("button"); // start button
         const infoBox = document.getElementById("infoBox");
-        const closeButton = document.getElementById("closeButton");
-        const buttoni = document.getElementById("buttoni");
-        var square = document.getElementById("square");
-        var realSquare = document.getElementById("realSquare");
-        var text = document.getElementById("text");
+        const closeButton = document.getElementById("closeButton"); // close button for the infobox
+        const buttoni = document.getElementById("buttoni"); // the infobox button 
+        var square = document.getElementById("square"); // square that the circle moves along 
+        var realSquare = document.getElementById("realSquare"); // the square that shows 
+        var text = document.getElementById("text"); // the inhale, hold, exhale text inside square
         var ball = document.getElementById("ball");
         var squareWidth = square.offsetWidth - ball.offsetWidth;
         var squareHeight = square.offsetHeight - ball.offsetHeight;
@@ -104,6 +109,7 @@
         let directionY = 1;
         let speed = 1;
 
+        // the function that moves the ball across the square 
         function moveBall() {
           if (x >= squareWidth && y < squareHeight) {
             y += speed;
@@ -126,11 +132,11 @@
           ball.style.left = x + "px";
         }
 
-        // to start moving the ball, and will only allow it to be pressed once
-        button.addEventListener("click", hello);
+        // to start moving the ball when the start button is pressed, and will only allow it to be pressed once
+        button.addEventListener("click", start);
         var number = 0;
 
-        function hello() {
+        function start() {
           if (number == 0) {
             setInterval(moveBall, 14);
             number++;
@@ -139,14 +145,14 @@
 
         // function to know if the inbox should close or open when the button is selected
         buttoni.addEventListener("click", openOrClose);
-        var peter = 1;
+        var num = 1;
         function openOrClose() {
-          if (peter % 2 != 0) {
+          if (num % 2 != 0) {
             popUp();
           } else {
             infoBox.style.display = "none";
           }
-          peter++;
+          num++;
         }
 
         function popDown() {}
@@ -155,7 +161,7 @@
           infoBox.style.display = "block";
         }
         closeButton.addEventListener("click", function () {
-          peter++;
+          num++;
           infoBox.style.display = "none";
         });
 
@@ -207,6 +213,7 @@
       var holdTime = 7;   // Hold time in seconds
       var exhaleTime = 8; // Exhale time in seconds
 
+      // function that expands/shrinks the circle for the 478-breathing exercise
       function startTimer() {
         timerElement.innerHTML = 'Breathe in';
         circleElement.classList.add('expand');
